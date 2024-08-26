@@ -1,12 +1,12 @@
 public class Dog{
 
-    private String name;
-    private String breed;
-    private int age;
-    private int daysInRescue;
-    private boolean adopted;
+    String name;
+    String breed;
+    int age;
+    int daysInRescue;
+    boolean adopted;
     
-    private static int dogCounter;
+    static int dogCounter;
 
     public Dog(String name, String breed, int age){
         this.name = name;
