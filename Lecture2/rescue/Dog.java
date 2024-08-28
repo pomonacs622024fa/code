@@ -6,7 +6,7 @@ public class Dog{
     private String breed;
     private int age;
     private int daysInRescue;
-=    private boolean adopted;
+    private boolean adopted;
     
     private static int dogCounter;
 
