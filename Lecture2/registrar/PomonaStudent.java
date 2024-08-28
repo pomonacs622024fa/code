@@ -1,4 +1,4 @@
-package rescue;
+package registrar;
 
 public class PomonaStudent {
 
