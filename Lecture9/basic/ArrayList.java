@@ -290,7 +290,7 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		ArrayList<String> a1 = new ArrayList<String>();
 		a1.add("CS062");
 		System.out.println(a1);

@@ -75,7 +75,7 @@ public class PomonaStudent {
     }
 
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         PomonaStudent student1 = new PomonaStudent("Ravi Kumar", "rkjc2023@mypomona.edu", 1234);
         System.out.println(student1);
     }

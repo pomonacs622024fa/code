@@ -17,7 +17,7 @@ public class PomonaStudent {
         this.id = id;
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         // Experiment with what happens when you uncomment the code below. 
         // You will have to also uncomment the empty default constructor

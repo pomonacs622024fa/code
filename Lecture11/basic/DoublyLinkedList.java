@@ -343,7 +343,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		DoublyLinkedList<Integer> dll = new DoublyLinkedList<Integer>();
 		dll.addFirst(1);
 		System.out.println(dll);

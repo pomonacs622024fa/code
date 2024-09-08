@@ -251,7 +251,7 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
 		sll.add(1);
 		System.out.println(sll);
