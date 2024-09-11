@@ -13,7 +13,7 @@ class SecondYearPomonaStudent extends PomonaStudent{
     }
 
     public String toString(){
-        return super.toString() + "Second-Year Student can Take: " + getMaxCredits() +" credits";
+        return super.toString() + "Second-Year Student can Take: " + getMaxCredits() + " credits";
     }
     
 }

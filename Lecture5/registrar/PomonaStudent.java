@@ -55,7 +55,7 @@ class PomonaStudent implements Enrollable{
     }
 
     public String toString(){
-        return "Pomona Student Info - Name: " + name + "\nemail: " + email + "\nid: " + id + "\n";
+        return "Name: " + name + "\nemail: " + email + "\nid: " + id + "\n";
     }
 
     public void enrollInCourse(String course) {

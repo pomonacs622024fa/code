@@ -21,6 +21,11 @@ class FirstYearPomonaStudent extends PomonaStudent{
     }
 
     public String toString(){
-        return super.toString() + "First-Year Student Attending ID1: " + id1;
+        return super.toString() + "First-Year Student Attending ID1: " + id1 + "\n";
+    }
+
+    public static void main(String[] args) {
+        FirstYearPomonaStudent s1 = new FirstYearPomonaStudent("Daniel", "daniel@pom.edu", 1, "War and Peace");
+        System.out.println(s1);
     }
 }
