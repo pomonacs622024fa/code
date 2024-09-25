@@ -1,6 +1,7 @@
 package basic;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * The {@code SinglyLinkedList} class represents a singly linked list. It has
@@ -57,9 +58,8 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 
         Node finger = head;
 		// search for index-th element or end of list
-		while (index > 0) {
+		for(int i=0; i<index; i++){
 			finger = finger.next;
-			index--;
 		}
 		return finger.element;
 	}
@@ -102,10 +102,9 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 			Node previous = null;
 			Node finger = head;
 			// search for index-th position
-			while (index > 0) {
+			for(int i=0; i<index; i++){
 				previous = finger;
 				finger = finger.next;
-				index--;
 			}
 			// create new value to insert in correct position.
 			Node current = new Node();
@@ -133,9 +132,8 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 
 		Node finger = head;
 		// search for index-th position
-		while (index > 0) {
+		for(int i=0; i<index; i++){
 			finger = finger.next;
-			index--;
 		}
 		// reference old element at index
 		E old = finger.element;
@@ -180,10 +178,9 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 			Node previous = null;
 			Node finger = head;
 			// search for value indexed, keep track of previous
-			while (index > 0) {
+			for(int i=0; i<index; i++){
 				previous = finger;
 				finger = finger.next;
-				index--;
 			}
 			previous.next = finger.next;
 
@@ -191,7 +188,6 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 			// finger's value is old value, return it
 			return finger.element;
 		}
-
 	}
 
 	/**

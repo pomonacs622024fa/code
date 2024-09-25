@@ -45,7 +45,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		return size;
 	}
 
-	/**
+/**
 	 * Returns element at the specified index.
 	 * 
 	 * @param index
@@ -64,9 +64,8 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		}
 		Node finger = head;
 		// search for index-th element or end of list
-		while (index > 0) {
+		for(int i=0; i<index; i++){
 			finger = finger.next;
-			index--;
 		}
 		return finger.element;
 	}
@@ -75,7 +74,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 	 * Inserts the specified element at the head of the doubly linked list.
 	 * 
 	 * @param element
-	 *             the element to be inserted
+	 *                the element to be inserted
 	 */
 	public void addFirst(E element) {
 		// Save the old node
@@ -100,7 +99,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 	 * Inserts the specified element at the tail of the doubly linked list.
 	 * 
 	 * @param element
-	 *             the element to be inserted
+	 *                the element to be inserted
 	 */
 	public void addLast(E element) {
 		// Save the old node
@@ -125,21 +124,19 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 	 * Inserts the specified element at the tail of the doubly linked list.
 	 * 
 	 * @param element
-	 *             the element to be inserted
+	 *                the element to be inserted
 	 */
 	public void add(E element) {
 		addLast(element);
 	}
 
-	
-
 	/**
 	 * Inserts the specified element at the specified index.
 	 * 
 	 * @param index
-	 *              the index to insert the element
+	 *                the index to insert the element
 	 * @param element
-	 *              the element to insert
+	 *                the element to insert
 	 * @pre: 0<=index<=size
 	 */
 	public void add(int index, E element) {
@@ -155,10 +152,9 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 			Node previous = null;
 			Node finger = head;
 			// search for index-th position
-			while (index > 0) {
+			for(int i=0; i<index; i++){
 				previous = finger;
 				finger = finger.next;
-				index--;
 			}
 			// create new value to insert in correct position
 			Node current = new Node();
@@ -176,9 +172,9 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 	 * Replaces the element at the specified index with the specified E.
 	 * 
 	 * @param index
-	 *              the index to insert the element
+	 *                the index to insert the element
 	 * @param element
-	 *              the element to insert
+	 *                the element to insert
 	 * @pre: 0<=index<size
 	 */
 	public E set(int index, E element) {
@@ -187,13 +183,12 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		}
 		Node finger = head;
 		// search for index-th position
-		while (index > 0) {
+		for(int i=0; i<index; i++){
 			finger = finger.next;
-			index--;
 		}
 		// reference old element at index
 		E old = finger.element;
-		//replace element at finer with new element
+		// replace element at finer with new element
 		finger.element = element;
 
 		return old;
@@ -212,7 +207,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		// if there was only one node in the doubly linked list.
 		if (head == null) {
 			tail = null; // remove final node.
-			
+
 		} else {
 			head.prev = null;
 		}
@@ -270,10 +265,9 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 			Node previous = null;
 			Node finger = head;
 			// search for value indexed, keep track of previous
-			while (index > 0) {
+			for(int i=0; i<index; i++){
 				previous = finger;
 				finger = finger.next;
-				index--;
 			}
 			previous.next = finger.next;
 			finger.next.prev = previous;
@@ -293,7 +287,7 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		tail = null;
 		size = 0;
 	}
-
+	
 	/**
 	 * Converts the doubly linked list to a String.
 	 */
