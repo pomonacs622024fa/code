@@ -1,6 +1,7 @@
 package basic;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * The {@code DoublyLinkedList} class represents a doubly linked list. It has
@@ -309,13 +310,12 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 		}
 		ret = ret.substring(0, ret.length() - 5);
 
-		ret += "] Head: ";
+		ret += " ->] Head: ";
 		ret += head.element;
 		ret += ", Tail: " + tail.element;
 		ret += ", Size: " + size;
 		return ret;
 	}
-
 	/**
 	 * Constructs an iterator for the doubly linked list.
 	 */
