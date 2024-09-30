@@ -1,7 +1,6 @@
 package basic;
 
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * The {@code SinglyLinkedList} class represents a singly linked list. It has
@@ -188,6 +187,7 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 			// finger's value is old value, return it
 			return finger.element;
 		}
+
 	}
 
 	/**
@@ -197,6 +197,36 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 		head = null;
 		size = 0;
 	}
+
+	public void reverseLinkedListIteratively() {
+		Node previous = null;
+		Node finger = head;
+		Node next;
+		while (finger != null) {
+			next = finger.next;
+			finger.next = previous;
+			previous = finger;
+			finger = next;
+		}
+		head = previous;
+	}
+
+	public Node reverseLinkedListRecursively(Node head) {
+		Node first;
+	
+		if (head==null || head.next == null)
+			return head;
+	
+		first = reverseLinkedListRecursively(head.next);
+		//reverse link
+		head.next.next = head;
+		//break old pointer
+		head.next = null;
+	
+		return first;
+	}
+	
+
 
 	/**
 	 * Converts the singly linked list to a String.
@@ -247,38 +277,47 @@ public class SinglyLinkedList<E> implements List<E>, Iterable<E>{
 		}
 	}
 
+	public void removeDuplicates() {
+		Node current = head;
+
+		while (current != null) {
+			Node finger = current;
+
+			while (finger.next != null) {
+				if (finger.next.element.equals(current.element)) {
+					finger.next  = finger.next.next;
+				} else {
+					finger = finger.next;
+				}
+			}
+
+			current = current.next;
+		}
+
+	}
+
+
 	public static void main(String[] args) {
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
-		sll.add(1);
-		System.out.println(sll);
-		sll.add(20);
-		System.out.println(sll);
-		sll.add(1, 2);
-		System.out.println(sll);
-		System.out.println(sll.set(1, 47));
-		System.out.println(sll);
-		sll.add(35);
-		System.out.println(sll);
-		sll.add(40);
-		System.out.println(sll);
-		System.out.println(sll.size());
-		System.out.println(sll.remove());
-		System.out.println(sll);
-		System.out.println(sll.remove());
-		System.out.println(sll);
-		System.out.println(sll.remove());
-		System.out.println(sll);
-		sll.add(1);
-		System.out.println(sll);
 		sll.add(3);
-		System.out.println(sll);
-		System.out.println(sll.remove());
-		System.out.println(sll);
-		sll.clear();
-		System.out.println(sll);
-		System.out.println(sll.size());
+		sll.add(2);
 		sll.add(1);
-		System.out.println(sll);
+        System.out.println(sll);
+		sll.head = sll.reverseLinkedListRecursively(sll.head);
+        System.out.println(sll);
+		sll.reverseLinkedListIteratively();
+        System.out.println(sll);
+
+		SinglyLinkedList<Integer> mylist = new SinglyLinkedList<Integer>();
+		for (int i = 0; i < 5; i++) {
+			mylist.add(0);
+			mylist.add(1);
+		}
+
+		System.out.println(mylist); // SinglyLinkedList: [1->0->1->0->1->0->1->0->1->0] Head 1:
+		mylist.removeDuplicates();
+		System.out.println(mylist); // SinglyLinkedList: [1->0->] Head: 1
+
 
 	}
 
