@@ -1,7 +1,6 @@
 package basic;
 
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * The {@code SinglyLinkedList} class represents a singly linked list. It has
