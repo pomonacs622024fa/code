@@ -120,13 +120,13 @@ public class DoublyLinkedList<E> implements List<E>, Iterable<E> {
 	}
 
 	/**
-	 * Inserts the specified element at the tail of the doubly linked list.
+	 * Inserts the specified element at the head of the doubly linked list.
 	 * 
 	 * @param element
 	 *                the element to be inserted
 	 */
 	public void add(E element) {
-		addLast(element);
+		addFirst(element);
 	}
 
 	/**
